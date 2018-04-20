@@ -60,6 +60,7 @@ public class ReduceTest {
         assertThat(evenReduce.getOrderedMedian()).isEqualTo(1.5);
     }
 
+
     @Test
     public void should_get_element_in_middle_position_in_linkList() {
     //获取单链表中的中位数
@@ -71,7 +72,6 @@ public class ReduceTest {
         when(singleLink.getNode(7)).thenReturn(9);
 
         Reduce reduce = new Reduce(arrayList);
-
         assertThat(reduce.getMedianInLinkList(singleLink)).isEqualTo(9.5);
         verify(singleLink, times(12)).addTailPointer(anyInt());
 

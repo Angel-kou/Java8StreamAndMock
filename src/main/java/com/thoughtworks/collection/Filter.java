@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Filter {
 
@@ -14,18 +15,22 @@ public class Filter {
     }
 
     public List<Integer> filterEven() {
-        throw new NotImplementedException();
+        List<Integer> res = this.array.stream().filter(x->x%2==0).collect(Collectors.toList());
+        return res;
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new NotImplementedException();
+        List<Integer> res = this.array.stream().filter(x->x%3==0).collect(Collectors.toList());
+        return res;
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> res = firstList.stream().filter(x->secondList.contains(x)).collect(Collectors.toList());
+        return res;
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        List<Integer> res = this.array.stream().distinct().collect(Collectors.toList());
+        return res;
     }
 }

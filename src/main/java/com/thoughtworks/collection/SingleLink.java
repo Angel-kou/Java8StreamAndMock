@@ -10,4 +10,5 @@ public interface SingleLink<T> {
     public void addHeadPointer(T item);    //添加头指针
     public void addTailPointer(T item);         //添加尾指针
     public T getNode(int index);
+
 }
